@@ -18,11 +18,12 @@ public class StudentServiceImp implements StudentService {
 
     @Override
     public ResponseEntity<List<Student>> getAllStudent() {
-        List<Student> listStudent = studentRepository.findAll();
-        if(listStudent.isEmpty()) {
+        List<Student> studentList = studentRepository.findAll();
+        if(studentList.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity(listStudent, HttpStatus.OK);
+
+        return new ResponseEntity(studentList, HttpStatus.OK);
     }
 
     @Override

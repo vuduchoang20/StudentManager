@@ -23,15 +23,15 @@ public class PointServiceImp implements PointService {
     @Override
     public ResponseEntity<List<Point>> getAllPoint() {
 
-        List<Point> listPoint = pointRepository.findAll();
-        if(listPoint.isEmpty()) {
+        List<Point> pointList = pointRepository.findAll();
+        if(pointList.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<Point>>(listPoint, HttpStatus.OK);
+        return new ResponseEntity<List<Point>>(pointList, HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<Point> SavePoint(long student_id, Point point) {
+    public ResponseEntity<Point> savePoint(long student_id, Point point) {
 
         Student student = studentRepository.findById(student_id).get();
 

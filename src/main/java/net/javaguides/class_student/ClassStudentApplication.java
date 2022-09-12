@@ -16,11 +16,5 @@ public class ClassStudentApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		/*Student student = new Student();
-		student.setAge(23);
-		student.setSex(true);
-		student.setCountry("Thai Binh");
-		student.setFullName("Vu Duc Hoang");
-		studentRepository.save(student);*/
 	}
 }

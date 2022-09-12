@@ -9,5 +9,5 @@ import java.util.List;
 public interface PointService {
     ResponseEntity<List<Point>> getAllPoint();
 
-    ResponseEntity<Point> SavePoint(long student_id, Point point);
+    ResponseEntity<Point> savePoint(long student_id, Point point);
 }

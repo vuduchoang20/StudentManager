@@ -29,6 +29,6 @@ public class PointController {
 
     @PutMapping(value = "/savePoint/{student_id}")
     public ResponseEntity<Point> savePoint(@PathVariable long student_id, @RequestBody Point point){
-        return pointServiceImp.SavePoint(student_id, point);
+        return pointServiceImp.savePoint(student_id, point);
     }
 }
