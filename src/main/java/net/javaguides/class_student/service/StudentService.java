@@ -1,16 +1,17 @@
 package net.javaguides.class_student.service;
 
 import net.javaguides.class_student.model.Student;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface StudentService {
 
-    List<Student> getAllStudent();
+    ResponseEntity<List<Student>> getAllStudent();
 
-    String createStudent(Student student);
+    Student createStudent(Student student);
 
-    String updateStudentById(long id,Student student);
+    ResponseEntity<Student> updateStudentById(long id,Student student);
 
-    String deleteStudentById(long id);
+    ResponseEntity<Student> deleteStudentById(long id);
 }

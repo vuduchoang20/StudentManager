@@ -2,11 +2,12 @@ package net.javaguides.class_student.service;
 
 import net.javaguides.class_student.model.Point;
 import net.javaguides.class_student.model.Student;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface PointService {
-    List<Point> getPoint();
+    ResponseEntity<List<Point>> getAllPoint();
 
-    String SavePoint(long student_id, Point point);
+    ResponseEntity<Point> SavePoint(long student_id, Point point);
 }

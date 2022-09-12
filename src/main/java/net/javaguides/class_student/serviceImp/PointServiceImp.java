@@ -6,9 +6,13 @@ import net.javaguides.class_student.repository.PointRepository;
 import net.javaguides.class_student.repository.StudentRepository;
 import net.javaguides.class_student.service.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PointServiceImp implements PointService {
     @Autowired
     private PointRepository pointRepository;
@@ -17,22 +21,28 @@ public class PointServiceImp implements PointService {
     public StudentRepository studentRepository;
 
     @Override
-    public List<Point> getPoint() {
-        return pointRepository.findAll();
+    public ResponseEntity<List<Point>> getAllPoint() {
+
+        List<Point> listPoint = pointRepository.findAll();
+        if(listPoint.isEmpty()) {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<List<Point>>(listPoint, HttpStatus.OK);
     }
 
     @Override
-    public String SavePoint(long student_id, Point point) {
+    public ResponseEntity<Point> SavePoint(long student_id, Point point) {
 
         Student student = studentRepository.findById(student_id).get();
 
         if(student == null){
-            return "student does not exist";
+            return ResponseEntity.notFound().build();
         }
 
         point.setStudent(student);
 
-        pointRepository.save(point);
-        return "Create point success";
+        Point a = pointRepository.save(point);
+
+        return ResponseEntity.ok(a);
     }
 }
