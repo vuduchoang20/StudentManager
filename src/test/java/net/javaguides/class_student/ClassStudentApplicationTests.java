@@ -1,4 +1,4 @@
-package net.javaguides.ClassStudent;
+package net.javaguides.class_student;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package net.javaguides.ClassStudent.model;
+package net.javaguides.class_student.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

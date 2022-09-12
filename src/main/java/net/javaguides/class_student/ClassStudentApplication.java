@@ -1,7 +1,6 @@
-package net.javaguides.ClassStudent;
+package net.javaguides.class_student;
 
-import net.javaguides.ClassStudent.model.Student;
-import net.javaguides.ClassStudent.repository.StudentRepository;
+import net.javaguides.class_student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
